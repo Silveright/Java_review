@@ -18,7 +18,7 @@ public class Main_IsNumber {
 
 				while (true) {
 					try {
-						num = Integer.parseInt(sc.nextLine());
+						num = Integer.parseInt(sc.nextLine());//문자가 들어온 경우 오류 발생
 						break;
 					} catch (java.lang.NumberFormatException e) {
 						System.out.print("숫자로 다시 입력하세요>");

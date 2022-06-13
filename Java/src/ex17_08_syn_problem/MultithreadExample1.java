@@ -1,5 +1,13 @@
 package ex17_08_syn_problem;
-
+/*계좌 이체와 잔액 출력을 동시에 하는 멀티 스레드 프로그램
+ * 
+ * -이몽룡의 계좌에서 인출된 100만원이 성춘향의 게좌로 입금되기 전에
+ * PrintThread로 실행 제어가 넘어가 계좌 잔액 합계 29000000 출력됨
+ * 
+ * -해결 법
+ * 동기화: 공유 데이터 사용 중 그 공유 데이터를 다른 스레드가 사용하지 못하도록 만드는 것을 의미한다.
+ * 
+ */
 public class MultithreadExample1 {
 
 	public static void main(String[] args) {

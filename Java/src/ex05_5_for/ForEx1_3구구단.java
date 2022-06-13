@@ -29,8 +29,8 @@ public class ForEx1_3구구단 {
 			System.out.println("[" + dan + "단]");
 			for (int i = 1; i <= 9; i++) {
 				System.out.println(dan + "*" + i + "=" + (dan * i));
+			}
 		}
-	}
 
-}
+	}
 }

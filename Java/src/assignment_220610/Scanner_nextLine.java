@@ -8,9 +8,9 @@ public class Scanner_nextLine {
 		Scanner sc = new Scanner(System.in);
 	     System.out.println("입력하세요>");
 		  String name = sc.nextLine();
-	      System.out.println(name);
+		  //엔터를 치게 되면 빈문자열이 출력되어진다.
+	      System.out.println("출력결과=" + name);
+	      System.out.println("name 길이=" + name.length());
 	      sc.close();
 		}
-	
-	
 }
