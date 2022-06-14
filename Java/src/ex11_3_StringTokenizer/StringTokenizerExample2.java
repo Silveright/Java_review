@@ -19,16 +19,21 @@ public class StringTokenizerExample2 {
 		StringTokenizer str = new StringTokenizer(phone, "-");
 		System.out.println("*** StringTokenizer : "
 							+ phone + " 토큰 분리 ***");
-		while (str.hasMoreTokens()) {
-			System.out.println(str.nextToken());
-		}
+		String a= str.nextToken();
+		String b= str.nextToken();
+		String c= str.nextToken();
+		System.out.println(a +""+ b+""+ c);
+		
+//		while (str.hasMoreTokens()) {
+//			System.out.println(str.nextToken());
+//		}
 		
 		System.out.println("*** String의 split메서드 : "
 				+ phone + " 토큰 분리 ***");
 		
-		String a[] = phone.split("-");
-		for(String token: a) {
-			System.out.println(token);
-		}
+//		String a[] = phone.split("-");
+//		for(String token: a) {
+//			System.out.println(token);
+//		}
 	}
 }
