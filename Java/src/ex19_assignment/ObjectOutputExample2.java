@@ -4,12 +4,13 @@ import java.util.*;
 public class ObjectOutputExample2 {
 	
 	public static void main(String[] args) {
-		ArrayList<Student> as = new ArrayList<Student>();
+		ArrayList<Student2> as = new ArrayList<Student2>();
 		write(as);
 
 	}
 
-	private static void write(ArrayList<Student> as) {
+	private static void write(ArrayList<Student2> as) {
+	
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader("jumsu.txt"));
@@ -17,11 +18,12 @@ public class ObjectOutputExample2 {
 				String str = br.readLine();// 파일로부터 한 행씩 읽는다.
 				if (str == null)
 					break;
-
+				
+				//직렬화
 				ObjectOutputStream out = null;
 				try {
 					String[] li = str.split(" ");
-					Student s = new Student(li[0], Integer.parseInt(li[1]), Integer.parseInt(li[2]),
+					Student2 s = new Student2(li[0], Integer.parseInt(li[1]), Integer.parseInt(li[2]),
 							Integer.parseInt(li[3]));
 					as.add(s);
 
@@ -42,7 +44,7 @@ public class ObjectOutputExample2 {
 						System.out.println("파일을 닫는 중 오류가 발생했습니다.");
 						System.out.println(e.getMessage());
 					}
-				}
+				}//
 
 			}
 		} catch (FileNotFoundException fnfe) {
@@ -57,6 +59,5 @@ public class ObjectOutputExample2 {
 				System.out.println("파일 닫는 중 오류");
 			}
 		}
-
 	}
 }

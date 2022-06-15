@@ -1,14 +1,11 @@
 package ex18_assignment;
-
 import java.io.*;
 import java.util.ArrayList;
-
-
 public class jumsu2 {
 
 	public static void main(String[] args) {
 		ArrayList<Student> as = new ArrayList<Student>();
-		
+
 		input(as);
 		Student.sort(as);
 		print(as);
@@ -33,34 +30,31 @@ public class jumsu2 {
 			e.printStackTrace();
 		}
 	}
-	
+
 	static void sort(ArrayList<Student> students) {
 		Student imsi;
-		for (int i = 0; i < students.size()-1 ; i++) {
+		for (int i = 0; i < students.size() - 1; i++) {
 			for (int j = i + 1; j < students.size(); j++) {
 				if (students.get(i).getTotal() < students.get(j).getTotal()) {
 					imsi = students.get(i);
-					students.set(i,students.get(j));
-					students.set(j,imsi);
-					
-					}
+					students.set(i, students.get(j));
+					students.set(j, imsi);
+
 				}
+			}
 		}
-}
-	
+	}
+
 	static void print(ArrayList<Student> students) {
 		System.out.print("==========    학생별   /  과목별 총점구하기  ==========\n\t");
 		System.out.print("국어\t영어\t수학\t총점\t평균\n");
 		for (Student obj : students) {
 			System.out.println(obj.toString());
 		}
-		for(int j=0;j<45;j++){
+		for (int j = 0; j < 45; j++) {
 			System.out.print("=");
 		}
 		System.out.print("\n총점\t");
-		System.out.println(Student.korTotal+"\t"
-		                  +Student.engTotal+"\t"
-				          +Student.mathTotal);		
+		System.out.println(Student.korTotal + "\t" + Student.engTotal + "\t" + Student.mathTotal);
 	}
-
 }

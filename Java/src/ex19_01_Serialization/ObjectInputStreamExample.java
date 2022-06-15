@@ -9,7 +9,7 @@ public class ObjectInputStreamExample {
 	/*ObjectInputStream 클래스는 스트림 형태로 읽어들인 객체를 프로그램에서 
 	 * 사용할 수 있는 객체로 만드는 기능의 클래스이다.
 	 * 이 클레스를 FileInputStream 클래스와 함께 사용하려면
-	 * 파일에 저장된 객체를 프로그램에서 다시 읽어 사용할 수 있따.
+	 * 파일에 저장된 객체를 프로그램에서 다시 읽어 사용할 수 있다.
 	 * FileInputStream 객체를 생성해
 	 * ObjectInputStream생성자 파라미터로 넘겨주어야 한다.
 	 * 

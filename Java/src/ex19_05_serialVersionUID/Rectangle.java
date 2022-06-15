@@ -48,7 +48,4 @@ public class Rectangle implements java.io.Serializable{
 	int getArea() {
 		return width*height;
 	}
-	
-	
-	
 }

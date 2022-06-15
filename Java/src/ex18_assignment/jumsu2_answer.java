@@ -1,9 +1,6 @@
 package ex18_assignment;
-
 import java.io.*;
-import java.util.ArrayList;
-import java.util.StringTokenizer;
-
+import java.util.*;
 
 public class jumsu2_answer {
 
@@ -65,8 +62,8 @@ public class jumsu2_answer {
 					students.set(i,students.get(j));
 					students.set(j,imsi);
 					
-					}
 				}
+			}
 		}
 	}
 	
@@ -84,5 +81,4 @@ public class jumsu2_answer {
 		                  +Student.engTotal+"\t"
 				          +Student.mathTotal);		
 	}
-
 }

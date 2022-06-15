@@ -4,15 +4,6 @@ import java.io.*;
 
 public class ObjectInputStreamExample2 {
 	public static void main(String[] args) {
-//파일을 연다.
-	/*ObjectInputStream 클래스는 스트림 형태로 읽어들인 객체를 프로그램에서 
-	 * 사용할 수 있는 객체로 만드는 기능의 클래스이다.
-	 * 이 클레스를 FileInputStream 클래스와 함께 사용하려면
-	 * 파일에 저장된 객체를 프로그램에서 다시 읽어 사용할 수 있따.
-	 * FileInputStream 객체를 생성해
-	 * ObjectInputStream생성자 파라미터로 넘겨주어야 한다.
-	 * 
-	 */
 		//직렬화 대상이 아닌 게시물의 수는 0이된다.
 		//transient: 직렬화 대상에서 제외된다. (null값을 가지게 됨)
 		ObjectInputStream in = null;
@@ -42,5 +33,4 @@ public class ObjectInputStreamExample2 {
 			}
 		}
 	}
-
 }

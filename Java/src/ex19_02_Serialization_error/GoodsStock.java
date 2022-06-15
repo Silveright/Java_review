@@ -23,6 +23,4 @@ public class GoodsStock {
 	    public String toString() {
 	    	return "상품코드:" + code + "\t상품수량:" + num;
 	    }
-	    
-
 }

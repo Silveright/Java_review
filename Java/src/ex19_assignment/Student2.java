@@ -1,6 +1,12 @@
+//정적 필드가 있는 클래스
+//total 필드는 객체마다 따로 생기지만
+//grandTotal필드는 특정 객체에 상관없이 클래스 자체에 하나만 생기는 정적 필드
+
 package ex19_assignment;
+
 import java.util.ArrayList;
-public class Student implements java.io.Serializable {
+
+public class Student2 implements java.io.Serializable{
 	/**
 	 * 
 	 */
@@ -10,7 +16,7 @@ public class Student implements java.io.Serializable {
 	
 	static int korTotal, mathTotal, engTotal;
 	
-	public Student(String name, int kor, int eng, int math) {
+	public Student2(String name, int kor, int eng, int math) {
 		this.name = name;
 		this.kor = kor;
 		this.eng = eng;
@@ -34,8 +40,8 @@ public class Student implements java.io.Serializable {
 				//String.format("%.1F",getAverage()); 
 	}
 
-	static void sort(ArrayList<Student> students) {
-			Student imsi;
+	static void sort(ArrayList<Student2> students) {
+			Student2 imsi;
 			for (int i = 0; i < students.size()-1 ; i++) {
 				for (int j = i + 1; j < students.size(); j++) {
 					if (students.get(i).getTotal() < students.get(j).getTotal()) {
@@ -43,8 +49,8 @@ public class Student implements java.io.Serializable {
 						students.set(i,students.get(j));
 						students.set(j,imsi);
 						
+						}
 					}
-				}
 			}
 	} 
 }
