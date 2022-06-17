@@ -1,4 +1,4 @@
-package ex21_4_select_statement_dao;
+package ex21_4_select_statement_search_and;
 import java.sql.Date;
 //DTO(Data Transfer Object) 데이터 운반(데이터를 저장해서 보내는 역할)
 public class Emp {

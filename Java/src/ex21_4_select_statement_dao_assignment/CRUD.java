@@ -22,9 +22,12 @@ public class CRUD {
 					menus[4],menus[5],menus[6],menus[7]);
 			
 			for(Map<String, Object> s: e) {
-				System.out.printf("%5d\t%-8s%-10s\t%-5d\t%-15s%-7d%7d%5d\n",
-						s.get("Empno"),s.get("Ename"),s.get("Job"),s.get("Mgr"),
-						s.get("Hiredate"),s.get("Sal"),s.get("Comm"),s.get("Deptno"));
+				System.out.printf("%-8s%-8s%-16s%s\t%-16s%s\t%s\t%s\n",
+						s.get("empno"),s.get("ename"),s.get("job"),s.get("mgr"),
+						s.get("hiredate"),s.get("sal"),s.get("comm"),s.get("deptno"));
+//				System.out.printf("%5d\t%-8s%-10s\t%-5d\t%-15s%-7d%7d%5d\n",
+//						s.get("Empno"),s.get("Ename"),s.get("Job"),s.get("Mgr"),
+//						s.get("Hiredate"),s.get("Sal"),s.get("Comm"),s.get("Deptno"));
 			}
 			
 		}

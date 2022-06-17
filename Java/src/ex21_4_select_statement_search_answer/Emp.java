@@ -1,4 +1,4 @@
-package ex21_4_select_statement_dao;
+package ex21_4_select_statement_search_answer;
 import java.sql.Date;
 //DTO(Data Transfer Object) 데이터 운반(데이터를 저장해서 보내는 역할)
 public class Emp {
@@ -62,7 +62,7 @@ public class Emp {
 	}
 	@Override
 	public String toString() {
-		return  String.format("%-8s%-8s%-16s%s\t%-16s%s\t%s\t%s\n",
+		return  String.format("%-8s%-8s%-16s%s\t%-16s%s\t%s\t%s",
 				 empno,  ename, job, mgr,
 				 hiredate, sal, comm, deptno);
 	}

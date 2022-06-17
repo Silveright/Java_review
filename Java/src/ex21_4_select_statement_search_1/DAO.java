@@ -1,18 +1,16 @@
 
-package ex21_4_select_statement_dao_assignment;
+package ex21_4_select_statement_search_1;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 public class DAO {//데이터를 담아 가지고 오는 역할만 수행
 	
 	/*
 	 * DAO(Data Access Object)클래스
 	 * -데이터 베이스와 연동하여 레코드의 추가, 수정, 삭제 작업이 이루어지는 클래스
 	 */
-	public ArrayList<Map<String, Object>> selectAll() {
-		ArrayList<Map<String, Object>> list = null;
+	public ArrayList<Emp> search(int menu, String word) {
+		ArrayList<Emp> list = null;
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -40,34 +38,48 @@ public class DAO {//데이터를 담아 가지고 오는 역할만 수행
 			 * 이 메서드는 파라미터로 넘겨준 select 문을 데이터베이스로 보내 실행하고
 			 * 그 결과로 ResultSet 객체를 리턴한다.
 			 */
-			
-			String select_sql = "select * from emp";
-			
+			String[] column_name = {"empno","ename","job","mgr","hiredate","sal","comm","deptno","end"};
+			String select_sql;
+			if (column_name[menu].equals("ename") || column_name[menu].equals("job")
+					|| column_name[menu].equals("hiredate")) {
+				String single = "'";
+				System.out.println("select * from emp " + 
+								"where " + column_name[menu] + 
+								" = " + single + word + single);
+				select_sql = "select * from emp " + 
+								"where " + column_name[menu] + 
+								" = " + single + word+ single;
+			} else if (column_name[menu].equals("end")) {
+				System.out.println("select * from emp");
+				select_sql = "select * from emp";
+				
+			}
+			else {
+				System.out.println("select * from emp " + "where " + column_name[menu] + " = " + word);
+				select_sql = "select * from emp " + "where " + column_name[menu] + " = " + word;
+			}
 			rs = stmt.executeQuery(select_sql);
-			
 			
 			int i =0;
 			
 			while(rs.next()) {//더이상 읽을 데이터가 없을때까지 반복
 				//if (i==0)
 				if(i++ ==0) {
-					list = new ArrayList<Map<String, Object>>();//데이터 있는 경우 딱 한번만 만들어진다.
+					list = new ArrayList<Emp>();//데이터 있는 경우 딱 한번만 만들어진다.
 				}
 				//i++;
-				Map<String, Object> m = new HashMap<String, Object>();
-				//value값의 타입이 모두 다르기 때문에 Object형을 써야 한다.
-				m.put("empno", rs.getInt(1));
-				m.put("ename", rs.getString(2));
-				m.put("job", rs.getString(3));
-				m.put("mgr", rs.getInt(4));
-				m.put("hiredate", rs.getDate(5));
-				m.put("sal", rs.getInt(6));
-				m.put("comm", rs.getInt(7));
-				m.put("deptno", rs.getInt(8));
-				list.add(m);
-			
+				Emp st = new Emp();
+				st.setEmpno(rs.getInt(1));
+				st.setEname(rs.getString(2));
+				st.setJob(rs.getString(3));
+				st.setMgr(rs.getInt(4));
+				st.setHiredate(rs.getDate(5));
+				st.setSal(rs.getInt(6));
+				st.setComm(rs.getInt(7));
+				st.setDeptno(rs.getInt(8));
+				list.add(st);
 			}
-		} catch(ClassNotFoundException cnfe) {//ReferencedLibrary ojdbc6jar oracle.jdbc.driver.OracleDriver
+		} catch(ClassNotFoundException cnfe) {
 			System.out.println("해당 클래스를 찾을 수 없습니다." + cnfe.getMessage());
 		} catch(SQLException se) {
 			System.out.println(se.getMessage());
