@@ -5,7 +5,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-public class DAO {//데이터를 담아 가지고 오는 역할만 수행
+public class DAO {
 	
 	/*
 	 * DAO(Data Access Object)클래스

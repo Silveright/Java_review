@@ -71,9 +71,5 @@ public class CRUD_answer {
 			}
 		}
 	}
-		
-	
-	
-	
-	}
+}
 

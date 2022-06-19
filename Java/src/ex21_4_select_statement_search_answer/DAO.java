@@ -1,9 +1,8 @@
-
 package ex21_4_select_statement_search_answer;
 
 import java.sql.*;
 import java.util.ArrayList;
-public class DAO {//데이터를 담아 가지고 오는 역할만 수행
+public class DAO {
 	
 	/*
 	 * DAO(Data Access Object)클래스
