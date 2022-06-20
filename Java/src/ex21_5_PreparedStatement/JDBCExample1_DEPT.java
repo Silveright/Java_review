@@ -23,7 +23,9 @@ public class JDBCExample1_DEPT {
 			
 			//PreparedStatement객체 얻기
 			pstmt = conn.prepareStatement(select_sql.toString());
-			rs = pstmt.executeQuery(select_sql);
+			//사전 컴파일이 이루어짐
+			
+			rs = pstmt.executeQuery();
 			
 			/*
 			 * Statement 타입은 java.sql 패키지에 속하는 인터페이스 이름으로

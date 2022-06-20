@@ -15,7 +15,7 @@ public class JDBCExample_goodsinfo_where {
 					+ "from goodsinfo "
 					+ "where name = ?";
 			
-			pstmt = conn.prepareStatement(sel_where_sql.toString());
+			pstmt = conn.prepareStatement(sel_where_sql.toString());//toStrin()없애도 내부적으로 메서드를 사용해준다.
 			pstmt.setString(1, "디지털 TV");
 			rs = pstmt.executeQuery();
 			

@@ -29,8 +29,8 @@ public class JDBCExample_goodsinfo_insert_input_single {
 			 
 			 */
 			String sql = "insert into goodsinfo "
-					+ "values"
-					+ "(?,?,?,?)";
+					+ "(code, name, price, maker) "
+					+ "values(?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, args[0]);
 			pstmt.setString(2, args[1]);

@@ -3,7 +3,7 @@ import java.sql.*;
 public class JDBCExample_goodsinfo_update {
 	public static void main(String[] args) {
 		if(args.length !=2) {//A2000
-			System.out.println("상품코드를 입력하세요");
+			System.out.println("상품코드,제조사를 입력하세요");
 			return;
 		}
 		

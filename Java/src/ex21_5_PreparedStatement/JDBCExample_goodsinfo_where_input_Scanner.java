@@ -23,7 +23,6 @@ public class JDBCExample_goodsinfo_where_input_Scanner {
 					+ "where name = ?";
 			pstmt = conn.prepareStatement(sel_where_sql.toString());
 			pstmt.setString(1, str);
-			System.out.println(sel_where_sql+"\n");
 			rs = pstmt.executeQuery();
 			
 			System.out.println("번호\t상품코드\t상품명\t\t가격\t제조사");
