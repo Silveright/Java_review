@@ -66,3 +66,17 @@ from (SELECT * FROM BOARD
       ORDER BY BOARD_RE_REF DESC, 
       BOARD_RE_SEQ ASC)
 where rnum<=40)
+
+insert into board
+		(BOARD_NUM,BOARD_NAME,BOARD_PASS,BOARD_SUBJECT,     
+ 		BOARD_CONTENT ,BOARD_RE_REF,     
+		BOARD_RE_LEV, BOARD_RE_SEQ, BOARD_READCOUNT,
+		BOARD_DATE)
+  values(board_seq.nextval, 'admin', '1', 'JAVAµµ',
+		'JAVAµµ', 1,
+		1,1,0,
+		sysdate);
+
+create table board_copy as select * from board;
+
+select count(*) from board;

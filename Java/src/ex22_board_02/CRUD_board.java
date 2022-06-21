@@ -1,6 +1,5 @@
-package ex22_board_search2;
+package ex22_board_02;
 import java.util.Scanner;
-
 
 //emp의 모든 정보를 조회하는 클래스를 통해 가져온 데이터를 출력한다.
 public class CRUD_board {

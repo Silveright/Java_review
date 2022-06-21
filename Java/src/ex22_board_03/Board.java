@@ -1,4 +1,4 @@
-package ex22_board_search4;
+package ex22_board_03;
 
 public class Board {
 	private int BOARD_NUM;     

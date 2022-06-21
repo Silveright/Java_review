@@ -1,5 +1,4 @@
-package ex22_board_search;
-import java.util.ArrayList;
+package ex22_board_01;
 import java.util.Scanner;
 
 
@@ -42,28 +41,5 @@ public class CRUD_board {
 			}
 		return input;
 	}
-
-	
-	
-//	private static String searchData(Scanner sc, int menu) {
-//		System.out.println("조회 할 " +menus[menu-1]+"를(을) 입력하세요>");
-//		return sc.nextLine();
-//	}
-
-//	private static void search(int menu, String search_word) {
-//		DAO dao = new DAO();
-//		
-//		ArrayList<Emp> e = dao.search(menu - 1, search_word);
-//
-//		if (e == null) {
-//			System.out.println("검색 결과가 없습니다.");
-//		} else {
-//			System.out.printf("%s\t%s\t%s\t\t%s\t%s\t\t%s\t%s\t%s\t\n", menus[0], menus[1], menus[2], menus[3],
-//					menus[4], menus[5], menus[6], menus[7]);
-//			for (Emp s : e) {
-//				System.out.println(s.toString());
-//			}
-//		}
-//	}
 }
 

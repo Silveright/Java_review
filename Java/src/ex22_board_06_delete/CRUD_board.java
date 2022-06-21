@@ -1,4 +1,4 @@
-package ex22_board_search4;
+package ex22_board_06_delete;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,8 +20,16 @@ public class CRUD_board {
 				
 			case 2:
 				update(sc, dao);
-				break;
+				break;	
 				
+			case 3:
+				reply(sc, dao);
+				break;	
+			
+			case 4:
+				delete(sc, dao);
+				break;
+			
 			case 5:
 				selectAll(dao);
 				break;
@@ -34,17 +42,68 @@ public class CRUD_board {
 	}
 	
 
+	private static void delete(Scanner sc, BoardDAO_seq dao) {
+		System.out.println("삭제할 글 번호를 입력하세요>");
+		int num = inputNumber(sc);
+		Board board = select(dao,num);
+		 if(board !=null) {
+			 System.out.println("비밀번호>");
+			 String pass = sc.nextLine();
+			 if(pass.equals(board.getBOARD_PASS())) {
+					int count = dao.boardDelete(board);
+					System.out.println(count+"개 삭제되었습니다.");
+			} else {
+					 System.out.println("비밀번호가 다릅니다.");
+			}
+		 }
+	}
+
+
+	private static void reply(Scanner sc, BoardDAO_seq dao) {
+		System.out.println("답변을 달 글 번호를 입력하세요>");
+		 int num = inputNumber(sc);	
+		 Board board = select(dao, num);
+		 if(board !=null) {
+			 System.out.print("글쓴이>");
+			 board.setBOARD_NAME(sc.nextLine());
+			 
+			 System.out.print("제목>");
+			 board.setBOARD_SUBJECT(sc.nextLine());
+			 
+			 System.out.print("글 내용>");
+			 board.setBOARD_CONTENT(sc.nextLine());
+			 
+			 System.out.print("비밀번호>");
+			 board.setBOARD_PASS(sc.nextLine());
+			 
+				int result = dao.boardReply(board);
+				if(result!=0) {
+					System.out.println("답변 달기 성공");
+				} else {
+					System.out.println("답변 달기 실패");
+				}
+			 }
+	}
+
+
 	private static void update(Scanner sc, BoardDAO_seq dao) {
-		System.out.println("수정할 글 번호를 입력하세요>");
+		System.out.print("수정할 글 번호를 입력하세요>");
 		int num= inputNumber(sc);
 		 Board board = select(dao, num);
-		 String pw = board.getBOARD_PASS();
-		 if(select(dao,num)!=null) {
+		 if(board !=null) {
+			 System.out.print("제목>");
 			 board.setBOARD_SUBJECT(sc.nextLine());
+			 
+			 System.out.print("글 내용>");
 			 board.setBOARD_CONTENT(sc.nextLine());
-			 board.setBOARD_PASS(sc.nextLine());
-			 if(board.getBOARD_PASS().equals(pw)) {
-				if(dao.boardModify(board)==1) {
+			 
+			 System.out.print("비밀번호>");
+			 String pass = sc.nextLine();
+			 
+			 //지금 입력한 비밀번호와 DB에 저장된 비밀번호 비교하기
+			 if(pass.equals(board.getBOARD_PASS())) {
+				int result = dao.boardModify(board);
+				 if(result==1) {
 					System.out.println("수정에 성공했습니다.");
 				} else {
 					System.out.println("수정에 실패했습니다.");
@@ -71,13 +130,14 @@ public class CRUD_board {
 
 	private static Board  select(BoardDAO_seq dao, int num) {
 		Board board = dao.getDetail(num);
-		if(dao.getDetail(num) != null) {
+		if(board != null) {
 			printTitle();
-			selectAll(dao);
+			System.out.println(board.toString());
 		} else {
 			System.out.println("해당 글이 존재하지 않습니다.");
 		}
-		return dao.getDetail(num);
+		return board;//수정 삭제 시 비밀번호 확인을 위해 필요
+					//답변의 경우 원문글의 BOARD_RE_REF, BOARD_RE_LEV,BOARD_RE_SEQ값이 필요
 	}
 
 

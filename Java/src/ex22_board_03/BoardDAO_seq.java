@@ -1,4 +1,4 @@
-package ex22_board_search3;
+package ex22_board_03;
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package ex22_board_search2;
+package ex22_board_04_answer;
 
 public class Board {
 	private int BOARD_NUM;     
@@ -85,5 +85,17 @@ public class Board {
 	}
 	public void setBOARD_DATE(String bOARD_DATE) {
 		BOARD_DATE = bOARD_DATE;
+	}
+	
+	public String toString() {
+		String re = "";
+		if(BOARD_RE_LEV>0) {
+			for(int i =0; i<BOARD_RE_LEV *2; i++)
+				re += " ";
+				re += "re:";
+		}
+		return  String.format("%s\t%s\t\t%-16s\t%-16s\t%s\t%s\t%s\t%s",
+				BOARD_NUM,  BOARD_NAME, (re+BOARD_SUBJECT), BOARD_CONTENT,
+				BOARD_RE_REF, BOARD_RE_LEV, BOARD_RE_SEQ, BOARD_DATE.substring(0,10));
 	}
 }

@@ -1,4 +1,4 @@
-package ex22_board_search2;
+package ex22_board_02;
 
 import java.sql.*;
 public class BoardDAO_seq {

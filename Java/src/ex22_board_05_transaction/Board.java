@@ -1,4 +1,4 @@
-package ex22_board_search3;
+package ex22_board_05_transaction;
 
 public class Board {
 	private int BOARD_NUM;     
@@ -95,7 +95,7 @@ public class Board {
 				re += "re:";
 		}
 		return  String.format("%s\t%s\t\t%-16s\t%-16s\t%s\t%s\t%s\t%s",
-				BOARD_NUM,  BOARD_NAME, BOARD_SUBJECT, BOARD_CONTENT,
+				BOARD_NUM,  BOARD_NAME, (re+BOARD_SUBJECT) , BOARD_CONTENT,
 				BOARD_RE_REF, BOARD_RE_LEV, BOARD_RE_SEQ, BOARD_DATE.substring(0,10));
 	}
 }
